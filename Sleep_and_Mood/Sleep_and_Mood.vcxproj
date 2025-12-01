@@ -123,9 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="calc.c" />
     <ClCompile Include="core.c" />
     <ClCompile Include="input.c" />
+    <ClCompile Include="io.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="report.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="calc.h" />

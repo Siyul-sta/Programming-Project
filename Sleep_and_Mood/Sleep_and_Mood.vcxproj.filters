@@ -24,6 +24,15 @@
     <ClCompile Include="core.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="calc.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="report.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="io.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="input.h">
