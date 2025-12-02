@@ -1,4 +1,4 @@
 ﻿  report.c
-C:\Programming-Project\Sleep_and_Mood\report.c(68,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Programming-Project\Sleep_and_Mood\report.c(182,20): warning C4566: 유니버설 문자 이름 '\u26A0'(으)로 표현되는 문자는 현재 코드 페이지(949)에서 표현할 수 없습니다.
+C:\Programming-Project\Sleep_and_Mood\report.c(66,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Programming-Project\Sleep_and_Mood\report.c(237,20): warning C4566: 유니버설 문자 이름 '\u26A0'(으)로 표현되는 문자는 현재 코드 페이지(949)에서 표현할 수 없습니다.
   Sleep_and_Mood.vcxproj -> C:\Programming-Project\Sleep_and_Mood\Debug\Sleep_and_Mood.exe

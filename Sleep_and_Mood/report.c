@@ -23,13 +23,22 @@ void print_daily(const Log* arr, int n, const char* date) {
 void report_week(const Log* arr, int n) {
     if (n == 0) { printf("데이터 없음\n"); return; }
 
-    int cnt = (n < 7 ? n : 7);
     double h[7];
     int m[7];
+    int cnt = 0;
 
-    for (int i = 0; i < cnt; i++) {
-        h[i] = arr[n - 1 - i].hours;
-        m[i] = arr[n - 1 - i].mood;
+    // 뒤에서부터 최대 7개, 그 중에서 hours > 0 인 것만 사용
+    for (int i = n - 1; i >= 0 && cnt < 7; i--) {
+        if (arr[i].hours > 0.0) {          // ✅ 미완성 기록(0.0) 건너뛰기
+            h[cnt] = arr[i].hours;
+            m[cnt] = arr[i].mood;
+            cnt++;
+        }
+    }
+
+    if (cnt == 0) {
+        printf("최근 7일 안에 완성된 기록이 없습니다.\n");
+        return;
     }
 
     double avg_h = mean(h, cnt);
@@ -43,24 +52,13 @@ void report_week(const Log* arr, int n) {
         if (h[i] < minh) minh = h[i];
     }
 
-    printf("=== 최근 %d일 ===\n", cnt);
+    printf("=== 최근 %d일(완성된 기록 기준) ===\n", cnt);
     printf("평균 수면: %.2f시간\n", avg_h);
     printf("평균 기분: %.2f\n", avg_m);
     printf("최대 수면: %.2f시간\n", maxh);
     printf("최소 수면: %.2f시간\n", minh);
-    printf("권장 수면 ");
-    if (avg_h <= 12) {
-        printf("최근 7일간 평균적으로 오전에 주무셨습니다. 최대한 오후에 잘 수 있도록 수면 패턴을 바꿔보세요.\n");
-    }
-    else
-    {
-        if(avg_h < 21)
-        printf("최근 7일간 오후 9시 전에 주무셨습니다  수면 시간을 늦추는 것을 권장드립니다.!\n");
-        else{
-            printf("좋은 수면 습관입니다!\n");
-        }
-    }
 }
+
 
 // 월간 분석
 void report_month(const Log* arr, int n, int year, int month) {
